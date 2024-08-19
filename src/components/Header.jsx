@@ -38,7 +38,7 @@ function Headers() {
             <div className="flex flex-shrink-0 items-center">
               <img
                 alt="Your Company"
-                src="public/akalpit.png"
+                src="akalpit.png"
                 className="h-8 w-auto"
               />
             </div>
@@ -78,7 +78,7 @@ function Headers() {
                   <span className="sr-only">Open user menu</span>
                   <img
                     alt=""
-                    src="public/user.png"
+                    src="user.png"
                     className="h-8 w-8 rounded-full"
                   />
                 </MenuButton>
