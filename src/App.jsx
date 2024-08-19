@@ -11,7 +11,7 @@ import TextEditor from "./components/TextEditor";
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<Headers />
+    element:<Headers/>
   },
   {
     path:'/card',
