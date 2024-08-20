@@ -11,7 +11,7 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(data);
-        navigate('/');
+        navigate('/postcard');
   }
 
   function handleChange(e) {
@@ -27,7 +27,7 @@ export default function Login() {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"
-          src="/akalpit.png"  // Update this path to correctly point to your image
+          src="akalpit.png"  // Update this path to correctly point to your image
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
