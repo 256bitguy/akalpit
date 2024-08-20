@@ -7,11 +7,20 @@ import Profile from "./UI/Profile/Profile";
 import CardTwo from "./components/CardTwo";
 import AudioRecorder from "./components/AudioRecorder";
 import TextEditor from "./components/TextEditor";
+import Dialogs from "./components/Dialog";
+ 
 
 const router=createBrowserRouter([
   {
     path:'/',
-    element:<Headers/>
+    element:<Headers/>,
+    children:[
+      {
+        path:'postcard',
+        element:<PostCard/>
+      }
+    ]
+
   },
   {
     path:'/card',
@@ -31,7 +40,7 @@ const router=createBrowserRouter([
   },
   {
     path:'/test',
-    element:<AudioRecorder/>
+    element:<Dialogs/>
   }
 
 ])

@@ -1,33 +1,34 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import DefaultAccordion from '../libs/atoms/DefaultAccordion'
 
 import { useState } from 'react';
+import Dialogs from './Dialog';
+import { Outlet } from 'react-router-dom';
+import MenuDot from './MenuDot';
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
-const routing=[
-    {message : "Community"},
-    {message : "Resources"},
-    {message : "Akalpit"}
-]
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 function Headers() {
     const [open, setOpen] = useState(1);
+    const [isOpen, setIsOpen] = useState(0);
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
   return (
+    <div className="min-h-full">
     <Disclosure as="nav" className="bg-gray-800">
+       
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onClick={()=>{setIsOpen(!isOpen)}}>
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
@@ -71,7 +72,7 @@ function Headers() {
             </button>
 
             {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+            <Menu as="div" className="relative z-10 ml-3">
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-1.5" />
@@ -108,17 +109,21 @@ function Headers() {
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
-     {
-        routing.map((item)=>{
-            return(
-                <DefaultAccordion message={item.message}/>
-            )
-        })
-     }
-      </DisclosurePanel>
+     
+      
     </Disclosure>
+    <header className="bg-white shadow">
+          <div className="  flex justify-between items-center max-w-7xl z-10 px-2 py-6 sm:px-6 lg:px-8">
+        <div className=' w-2xl text-md  '> <MenuDot/></div>
+        <div className='mx-5  text-md  rounded-md bg-gray-700 text-white'> <button className='text-md m-2 font-semibold'>All channels</button></div>
+          </div>
+        </header>
+        <main>
+          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <Outlet />
+          </div>
+        </main>
+    </div>
   )
 }
-
-export default Headers
+export default Headers 

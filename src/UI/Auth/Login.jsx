@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Dialogs from "../../components/Dialog";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -95,6 +96,7 @@ export default function Login() {
           </a>
         </p>
       </div>
+  
     </div>
   );
 }
