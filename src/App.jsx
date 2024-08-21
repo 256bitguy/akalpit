@@ -8,6 +8,7 @@ import CardTwo from "./components/CardTwo";
 import AudioRecorder from "./components/AudioRecorder";
 import TextEditor from "./components/TextEditor";
 import Dialogs from "./components/Dialog";
+import DragAndDropText from "./components/Drag";
  
 
 const router=createBrowserRouter([
@@ -40,7 +41,7 @@ const router=createBrowserRouter([
   },
   {
     path:'/test',
-    element:<Dialogs/>
+    element:<DragAndDropText/>
   }
 
 ])

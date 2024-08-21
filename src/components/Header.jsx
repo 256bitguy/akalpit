@@ -1,7 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import MenuDot from './MenuDot'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import DefaultAccordion from '../libs/atoms/DefaultAccordion'
 import Dialogs from './Dialog'
 import { useState } from 'react'
@@ -30,7 +30,7 @@ function classNames(...classes) {
 
 export default function Example() {
   const [abcd,setAbcd]=useState(true);
-  
+  const navigate=useNavigate()
   return (
     <>
      
@@ -104,7 +104,7 @@ export default function Example() {
           <div className='mx-5 text-md rounded-md bg-gray-700 text-white'>
             <button
               className='text-md m-2 font-semibold'
-              onClick={()=> console.log("sdfagfdhg")}
+              onClick={()=>navigate('/test')}
             >
               All channels
             </button>
