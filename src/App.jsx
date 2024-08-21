@@ -16,7 +16,7 @@ const router=createBrowserRouter([
     element:<Headers/>,
     children:[
       {
-        path:'postcard',
+        path:'posts',
         element:<PostCard/>
       }
     ]
@@ -31,7 +31,7 @@ const router=createBrowserRouter([
     element:<PostCard/>
   },
   {
-    path:'/¸',
+    path:'/login',
     element:<Login/>
   },
   {

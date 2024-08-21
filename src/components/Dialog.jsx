@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import DefaultAccordion from '../libs/atoms/DefaultAccordion'
+import { Link } from 'react-router-dom'
 
 const routing=[
   {
@@ -76,12 +77,12 @@ function Dialogs() {
                 </div>
                 <div className='flex flex-col gap-y-5'>
                 <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
-            <button
+           <Link to='/login'> <button
               className='text-md m-2 font-semibold'
               onClick={()=> console.log("sdfagfdhg")}
             >
              Login
-            </button>
+            </button></Link>
           </div>
           <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
             <button

@@ -1,6 +1,6 @@
  import React, { useState } from 'react'
 import { cn } from '../utils/utils'
- import {Apple, ChevronDown, ChevronUp, Newspaper, University} from "lucide-react"
+ import {Apple, ChevronDown, ChevronUp, Handshake, Newspaper, PartyPopper, University} from "lucide-react"
 import { Link } from 'react-router-dom'
  const DefaultAccordion = ({message}) => {
   const [value,setValue]=useState(1)
@@ -18,15 +18,34 @@ import { Link } from 'react-router-dom'
      </div>
      <div className={cn(" w-11/12 -m-1 self-center bg-white p-2", value ? "hidden" : "bg-white")}>
      <div className='grid grid-flow-row gap-3 p-1'>
-     <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
+     <Link to="/postcard">  <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
       <Newspaper  size={25} fill='#4da6ff'/>
-      <Link to="/postcard"> <p className='ml-3 text-lg'>Feed</p></Link>
+      <p className='ml-3 text-lg'>Feed</p>
      
       </div>
-      <Link to="/mycompany"> <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
+      </Link>
+      <Link to="/mycompany">
+      <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
       <University   size={25} fill='#4da6ff'/>
-       <p className='ml-3 text-lg'>My Community</p>
-     
+       <p className='ml-3 text-lg'>All Channles</p>
+      </div>
+      </Link>
+      <Link to="/card">
+      <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
+      <Handshake    size={25} fill='#4da6ff'/>
+       <p className='ml-3 text-lg'>Competition</p>
+      </div>
+      </Link>
+      <Link to="/mycompany">
+      <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
+      <PartyPopper    size={25} fill='#4da6ff'/>
+       <p className='ml-3 text-lg'>Events</p>
+      </div>
+      </Link>
+      <Link to="/card">
+      <div className='flex align-center bg-gray-100 p-2 rounded-xl'>
+      <University   size={25} fill='#4da6ff'/>
+       <p className='ml-3 text-lg'>My University</p>
       </div>
       </Link>
      </div>
