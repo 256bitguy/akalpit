@@ -31,7 +31,7 @@ const router=createBrowserRouter([
     element:<PostCard/>
   },
   {
-    path:'/login',
+    path:'/¸',
     element:<Login/>
   },
   {

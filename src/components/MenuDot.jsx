@@ -45,7 +45,7 @@ const people = [
   
 ]
 
-export default function MenuDot() {
+function MenuDot() {
   const [selected, setSelected] = useState(people[3])
 
   return (
@@ -88,3 +88,4 @@ export default function MenuDot() {
     </Listbox>
   )
 }
+export default MenuDot

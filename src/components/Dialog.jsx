@@ -5,15 +5,27 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import DefaultAccordion from '../libs/atoms/DefaultAccordion'
 
- function Dialogs( curr ) {
-    let opening=Boolean(curr)
-  const [open, setOpen] = useState(opening)
-  const routing=[
-    {message : "Community"},
-    {message : "Resources"},
-    {message : "Akalpit"}
+const routing=[
+  {
+    id:1,
+    message:"Community",
+  },
+  {
+    id:2,
+    message:"Resources",
+  },
+  {
+    id:3,
+    message:"Akalpit",
+  },
+  {
+    id:4,
+    message:"Others",
+  }
 ]
- 
+function Dialogs() {
+  const [open, setOpen] = useState(true)
+
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
       <DialogBackdrop
@@ -32,7 +44,7 @@ import DefaultAccordion from '../libs/atoms/DefaultAccordion'
                 <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 duration-500 ease-in-out data-[closed]:opacity-0 sm:-ml-10 sm:pr-4">
                   <button
                     type="button"
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(false)}
                     className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                   >
                     <span className="absolute -inset-2.5" />
@@ -42,16 +54,44 @@ import DefaultAccordion from '../libs/atoms/DefaultAccordion'
                 </div>
               </TransitionChild>
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                <div className="px-1 sm:px-6">
-                  <DialogTitle className="text-base font-semibold leading-6 text-gray-900">Panel title</DialogTitle>
+                <div className="px-4 sm:px-6">
+                  <DialogTitle className="text-base font-semibold leading-6 text-gray-900">
+                    <div>
+                    <img
+                    alt="Your Company"
+                    src="akalpit.png"
+                    className="h-8 w-8"
+                  />
+                    </div>
+                  </DialogTitle>
                 </div>
-                <div className="relative mt-6 flex-1 px-1 sm:px-6"> {
-        routing.map((item)=>{
-            return(
-                <DefaultAccordion message={item.message}/>
-            )
-        })
-     }</div>
+                <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                  {
+                    routing.map((item)=>{
+                      return(
+                        <DefaultAccordion message={item.message}/>
+                      )
+                    })
+                  }
+                </div>
+                <div className='flex flex-col gap-y-5'>
+                <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
+            <button
+              className='text-md m-2 font-semibold'
+              onClick={()=> console.log("sdfagfdhg")}
+            >
+             Login
+            </button>
+          </div>
+          <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
+            <button
+              className='text-md m-2 font-semibold'
+              onClick={()=> console.log("sdfagfdhg")}
+            >
+             Sign Up
+            </button>
+          </div>
+                </div>
               </div>
             </DialogPanel>
           </div>
@@ -60,4 +100,5 @@ import DefaultAccordion from '../libs/atoms/DefaultAccordion'
     </Dialog>
   )
 }
+
 export default Dialogs
