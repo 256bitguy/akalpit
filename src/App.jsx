@@ -1,15 +1,21 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./UI/Auth/Login";
 import Headers from "./components/Header";
 import Card from "./libs/post/Card";
 import PostCard from "./libs/post/PostCard";
-import Profile from "./UI/Profile/Profile";
 import CardTwo from "./components/CardTwo";
-import AudioRecorder from "./components/AudioRecorder";
-import TextEditor from "./components/TextEditor";
-import Dialogs from "./components/Dialog";
-import DragAndDropText from "./components/Drag";
+import About from "./UI/About/About";
+import SignUp from "./UI/Auth/SignUp";
+import { AccordionAka, DrawerAka} from "./UI";
+import {
  
+  ChevronDown,
+  ChevronUp,
+  Handshake,
+  Newspaper,
+  PartyPopper,
+  University,
+} from "lucide-react";
 
 const router=createBrowserRouter([
   {
@@ -28,6 +34,10 @@ const router=createBrowserRouter([
     element:<Card/>
   },
   {
+    path:'/about',
+    element:<About/>
+  },
+  {
     path:'/postcard',
     element:<PostCard/>
   },
@@ -39,9 +49,15 @@ const router=createBrowserRouter([
     path:'/mycompany',
     element:<CardTwo/>
   },
+  // {
+  //   path:'/test',
+  //   element:
+       
+    
+  // },
   {
-    path:'/test',
-    element:<DragAndDropText/>
+    path:'/signup',
+    element:<SignUp/>
   }
 
 ])

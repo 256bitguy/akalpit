@@ -1,5 +1,7 @@
 import React from 'react'
 import ProfileCard from './ProfleCard';
+import { cn } from '../libs/utils/utils';
+import New2 from './New2';
 
 
 const profiles = [
@@ -34,10 +36,11 @@ const profiles = [
       imageUrl: "akalpit.png"
     }
   ];
-const MyCompanyCard = () => {
+const MyCompanyCard = ({className}) => {
   return (
     <div
-   className="flex max-w-xl gap-y-5  flex-col border rounded-xl p-4 bg-white   ">
+   className={cn("flex max-w-xl gap-y-5  flex-col border rounded-xl p-4 bg-white ",className  )}>
+    <New2 className="bg-orange-400"/>
     <div>
         <h2 className="font-bold text-gray-600">UNIVERSITY</h2>
        </div>

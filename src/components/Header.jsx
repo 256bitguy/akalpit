@@ -1,10 +1,11 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import MenuDot from './MenuDot'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate,Link } from 'react-router-dom'
 import DefaultAccordion from '../libs/atoms/DefaultAccordion'
 import Dialogs from './Dialog'
 import { useState } from 'react'
+import { AccordionAka, DrawerAka, DrawerButtonAka, DrawerDialogAka } from '../UI'
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -79,23 +80,50 @@ export default function Example() {
                   
                 </div>
               </div>
-              <div className="-mr-2 flex md:hidden" onClick={()=>{setAbcd(!abcd);console.log(!abcd)}}>
-                {/* Mobile menu button */}
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              <div className="-mr-2 flex md:hidden"  >
+                {/* Mobile menu button */} 
                 
-                >
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  <Bars3Icon aria-hidden="true" className="block h-6 w-6 " />
-                  
-                </DisclosureButton>
+      <DrawerAka>
+         
+        <DrawerButtonAka name="Show Drawer" className="button-class bg-white" >
+      <Bars3Icon aria-hidden="true" className='block h-6 w-6'/>
+      </DrawerButtonAka>
+       
+    <DrawerDialogAka className="bg-white flex flex-col justify-between">
+     <div  >
+           
+     <AccordionAka title="home" className="rounded-lg mt-10"/>
+      <AccordionAka title="home" className="rounded-lg mt-10"/>
+      <AccordionAka title="home" className="rounded-lg mt-10"/>
+      <AccordionAka title="home" className="rounded-lg mt-10"/>
+     </div>
+      <div className='flex flex-col gap-y-5'>
+                <Link to='/login'>  <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
+           <button
+              className='text-md m-2 font-semibold'
+              onClick={()=> console.log("sdfagfdhg")}
+            >
+             Login
+            </button>
+          </div></Link>
+          <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
+            <button
+              className='text-md m-2 font-semibold'
+              onClick={()=> console.log("sdfagfdhg")}
+            >
+             Sign Up
+            </button>
+          </div>
+                </div>
+    </DrawerDialogAka>
+  </DrawerAka>
               </div>
             </div>
           </div>
 
          
         </Disclosure>
-                      {!abcd && <Dialogs/> }
+                     
         <header className="bg-white shadow">
         <div className="flex justify-between items-center max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
           <div className='w-2xl text-md'>

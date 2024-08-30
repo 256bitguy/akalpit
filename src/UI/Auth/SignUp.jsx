@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Dialogs from "../../components/Dialog";
-import New2 from "../../components/New2";
 
-export default function Login() {
+export default function SignUp() {
   const navigate = useNavigate();
   const [data, setData] = useState({
+    name:'',
     email: '',
     password: ''
   });
-  const [isOpen, setIsOpen] = useState(false);
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log(data);
@@ -23,9 +23,6 @@ export default function Login() {
       [name]: value,
     }));
   }
-  const toggleDrawer = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -36,12 +33,29 @@ export default function Login() {
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Welcome to AKALPIT World!!
+          Welcome to AKALPIT
         </h2>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+             Name
+            </label>
+            <div className="mt-2">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                onChange={handleChange}
+                autoComplete="name"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
           <div>
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
               E-mail
@@ -64,15 +78,9 @@ export default function Login() {
               <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                 Password
               </label>
-              <div className="text-sm">
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                  Forgot password?
-                </a>
-              </div>
+               
             </div>
             <div className="mt-2">
-            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-
               <input
                 id="password"
                 name="password"
@@ -84,27 +92,41 @@ export default function Login() {
               />
             </div>
           </div>
-
+          <div>
+            <div className="flex items-center justify-between">
+              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                Confirm Password
+              </label>
+              
+            </div>
+            <div className="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                autoComplete="current-password"
+                onChange={handleChange}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
           <div>
             <button
               type="submit"
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+             Register
             </button>
           </div>
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not an artist?{' '}
-          <Link to="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-            Create your new World!
+         Already an Akalpit? 
+          <Link to='/login' className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+           Log in
           </Link>
         </p>
-        <New2      name="hide button"     cl="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
->
-       
-        </New2>
       </div>
   
     </div>

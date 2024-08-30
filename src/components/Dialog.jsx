@@ -75,24 +75,7 @@ function Dialogs() {
                     })
                   }
                 </div>
-                <div className='flex flex-col gap-y-5'>
-                <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
-           <Link to='/login'> <button
-              className='text-md m-2 font-semibold'
-              onClick={()=> console.log("sdfagfdhg")}
-            >
-             Login
-            </button></Link>
-          </div>
-          <div className='mx-5 text-md rounded-md text-center bg-gray-700 text-white'>
-            <button
-              className='text-md m-2 font-semibold'
-              onClick={()=> console.log("sdfagfdhg")}
-            >
-             Sign Up
-            </button>
-          </div>
-                </div>
+               
               </div>
             </DialogPanel>
           </div>
