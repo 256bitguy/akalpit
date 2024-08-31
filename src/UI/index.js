@@ -1,4 +1,4 @@
-import AccordionAka from "./atoms/AccordionAka";
+import {AccordionSubtitleAka,AccordionAka,AccordionTitleAka} from "./atoms/AccordionAka";
 import AlertsAka from './atoms/AlertsAka';
 import AvatarAka from './atoms/AvatarAka';
 import BadgeAka from './atoms/BadgeAka';
@@ -30,7 +30,7 @@ import TimelineAka from './atoms/TimelineAka';
 import ToastAka from './atoms/ToastAka';
 import TooltipAka from './atoms/TooltipAka';
 
- export {AccordionAka} ;
+ export {AccordionSubtitleAka,AccordionAka,AccordionTitleAka} ;
  export {AlertsAka} ;
  export {AvatarAka} ;
  export {BadgeAka} ;

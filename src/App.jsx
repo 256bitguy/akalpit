@@ -16,6 +16,7 @@ import {
   PartyPopper,
   University,
 } from "lucide-react";
+import New from "./components/New";
 
 const router=createBrowserRouter([
   {
@@ -49,12 +50,10 @@ const router=createBrowserRouter([
     path:'/mycompany',
     element:<CardTwo/>
   },
-  // {
-  //   path:'/test',
-  //   element:
-       
-    
-  // },
+  {
+    path:'/test',
+    element:<New/>
+  },
   {
     path:'/signup',
     element:<SignUp/>
