@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BadgeAka = ({ color, text, size = 'text-xs' }) => {
+const BadgeAka = ({ color, text, className }) => {
   const colorClasses = {
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
     gray: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
@@ -13,7 +13,7 @@ const BadgeAka = ({ color, text, size = 'text-xs' }) => {
   };
 
   return (
-    <span className={`${colorClasses[color]} ${size} font-medium me-2 px-2.5 py-0.5 rounded`}>
+    <span className={`${colorClasses[color]}    ${className}`}>
       {text}
     </span>
   );

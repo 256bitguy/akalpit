@@ -20,6 +20,7 @@ const ButtonsAka = ({
     red: 'text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300',
     yellow: 'text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300',
     purple: 'text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300',
+    vivek:'text-green-400 bg-blue-200 border border-black-400'
   };
 
   return (

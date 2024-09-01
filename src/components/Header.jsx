@@ -17,6 +17,7 @@ import {
   AccordionAka,
   AccordionSubtitleAka,
   AccordionTitleAka,
+  AlertsAka,
   DrawerAka,
   DrawerButtonAka,
   DrawerDialogAka,
@@ -51,6 +52,7 @@ export default function Example() {
   return (
     <>
       <div className="h-full">
+       
         <Disclosure as="nav" className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
@@ -96,7 +98,7 @@ export default function Example() {
               </div>
               <div className="-mr-2 flex md:hidden">
                 {/* Mobile menu button */}
-
+                   
                 <DrawerAka>
                   <DrawerButtonAka
                     name="Show Drawer"
@@ -107,90 +109,10 @@ export default function Example() {
 
                   <DrawerDialogAka className="bg-white flex flex-col justify-between ">
                     <div className="mt-10">
-                      <AccordionAka className="font-bold">
+                    <AccordionAka className="font-bold">
                         <AccordionTitleAka
                           title="New"
-                          className="  dark:text-black"
-                        />
-                        <AccordionSubtitleAka className="flex bg-black">
-                          <div className="grid grid-flow-row gap-3 p-2 mb-2">
-                            <Link to="/postcard">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <Newspaper size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Feed</p>
-                              </div>
-                            </Link>
-                            <Link to="/mycompany">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <University size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">All Channels</p>
-                              </div>
-                            </Link>
-                            <Link to="/card">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <Handshake size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Competition</p>
-                              </div>
-                            </Link>
-                            <Link to="/mycompany">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <PartyPopper size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Events</p>
-                              </div>
-                            </Link>
-                            <Link to="/card">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <University size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">My University</p>
-                              </div>
-                            </Link>
-                          </div>
-                        </AccordionSubtitleAka>
-                      </AccordionAka>
-                      <AccordionAka className="font-bold">
-                        <AccordionTitleAka
-                          title="New"
-                          className="  dark:text-black"
-                        />
-                        <AccordionSubtitleAka className="flex bg-black">
-                          <div className="grid grid-flow-row gap-3 p-2 mb-2">
-                            <Link to="/postcard">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <Newspaper size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Feed</p>
-                              </div>
-                            </Link>
-                            <Link to="/mycompany">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <University size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">All Channels</p>
-                              </div>
-                            </Link>
-                            <Link to="/card">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <Handshake size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Competition</p>
-                              </div>
-                            </Link>
-                            <Link to="/mycompany">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <PartyPopper size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">Events</p>
-                              </div>
-                            </Link>
-                            <Link to="/card">
-                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
-                                <University size={25} fill="#4da6ff" />
-                                <p className="ml-3 text-lg">My University</p>
-                              </div>
-                            </Link>
-                          </div>
-                        </AccordionSubtitleAka>
-                      </AccordionAka>
-                      <AccordionAka className="font-bold">
-                        <AccordionTitleAka
-                          title="New"
-                          className="  dark:text-black"
+                          className="  text-gray-500"
                         />
                         <AccordionSubtitleAka className="flex bg-black">
                           <div className="grid grid-flow-row gap-3 p-2 mb-2">
