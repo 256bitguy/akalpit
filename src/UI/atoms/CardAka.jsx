@@ -1,15 +1,35 @@
 import React from 'react';
+import { cn } from '../../libs/utils/utils';
 
-const CardAka = ({ title, description, link, className }) => {
+
+const CardTopAka=({children, className })=>{
+return(
+<div className={cn("block m-1",className)}>
+{children}
+    </div>
+)
+}
+const CardCenterAka=({children, className })=>{
+  return(
+    <div className={cn("block m-1",className)}>
+    {children}
+        </div>
+)
+}
+const CardBotttomAka=({children, className })=>{
+  return(
+    <div className={cn("block m-1",className)}>
+    {children}
+        </div>
+  )
+}
+const CardAka = ({children, className }) => {
   return (
-    <a 
-      href={link} 
-      className={`block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 ${className}`}
-    >
-      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">{description}</p>
-    </a>
+    <div className={cn(" max-w-full rounded-lg shadow m-1 flex flex-col   ",className)}>
+{children}
+    </div>
+    
   );
 };
 
-export default CardAka;
+export   {CardAka,CardBotttomAka,CardCenterAka,CardTopAka};

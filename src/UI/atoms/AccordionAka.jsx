@@ -1,11 +1,7 @@
 import React, { useState, forwardRef } from "react";
 import {
   ChevronDown,
-  ChevronUp,
-  Handshake,
-  Newspaper,
-  PartyPopper,
-  University,
+  ChevronUp
 } from "lucide-react";
 
 import { cn } from "../../libs/utils/utils";
