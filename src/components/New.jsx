@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import { CarouselAka } from '../UI';
+import { CarouselAka, ClipboardAka } from '../UI';
 
 
  
 const New = () => {
   
   return (<>
-   
+   <ClipboardAka/>
 </>
   );
 };

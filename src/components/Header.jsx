@@ -8,7 +8,6 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import MenuDot from "./MenuDot";
 import { Outlet, useNavigate, Link } from "react-router-dom";
 import DefaultAccordion from "../libs/atoms/DefaultAccordion";
 import Dialogs from "./Dialog";
@@ -21,8 +20,11 @@ import {
   DrawerAka,
   DrawerButtonAka,
   DrawerDialogAka,
+  DropDownAka,
 } from "../UI";
 import { Handshake, Newspaper, PartyPopper, University } from "lucide-react";
+import SearchInputForm from "../UI/Forms/SearchInputForm";
+import OptionsAka from "../UI/atoms/OptionsAka";
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -55,7 +57,7 @@ export default function Example() {
        
         <Disclosure as="nav" className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
+            <div className="flex h-14 items-center justify-between">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <img
@@ -63,6 +65,9 @@ export default function Example() {
                     src="akalpit.png"
                     className="h-8 w-8"
                   />
+                </div>
+                <div>
+                  <SearchInputForm/>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
@@ -92,7 +97,7 @@ export default function Example() {
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="h-6 w-6" />
+                    <BellIcon aria-hidden="true" className="h-8 w-8" />
                   </button>
                 </div>
               </div>
@@ -179,13 +184,19 @@ export default function Example() {
         </Disclosure>
 
         <header className="bg-white shadow">
-          <div className="flex justify-between items-center max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
-            <div className="w-2xl text-md">
-              <MenuDot />
+          <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
+           <div className="flex gap-10">
+           <div className="w-16  text-xs">
+           <DropDownAka/>
             </div>
-            <div className="mx-5 text-md rounded-md bg-gray-700 text-white">
+            <div className="w-16  text-xs">
+            <DropDownAka/>
+            </div>
+           </div>
+           
+            <div className="  text-md rounded-md bg-gray-700 text-white">
               <button
-                className="text-md m-2 font-semibold"
+                className="text-xs m-2 font-semibold"
                 onClick={() => navigate("/test")}
               >
                 All channels
