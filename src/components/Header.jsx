@@ -63,7 +63,7 @@ export default function Example() {
                   <img
                     alt="Your Company"
                     src="akalpit.png"
-                    className="h-8 w-8"
+                    className="h-8 w-8 rounded-lg m-1"
                   />
                 </div>
                 <div>
@@ -187,10 +187,30 @@ export default function Example() {
           <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
            <div className="flex gap-10">
            <div className="w-16  text-xs">
-           <DropDownAka/>
+           <DropDownAka list={[{
+            "id":0,"name":"vidsfvek"
+           },{
+            "id":1,"name":"vivsdfsdfek"
+           },{
+            "id":2,"name":"viasddvek"
+           },{
+            "id":3,"name":"viasdasvek"
+           },{
+            "id":4,"name":"viasdvek"
+           }]}/>
             </div>
             <div className="w-16  text-xs">
-            <DropDownAka/>
+            <DropDownAka list={[{
+            "id":0,"name":"vivek"
+           },{
+            "id":1,"name":"vivek"
+           },{
+            "id":2,"name":"vivek"
+           },{
+            "id":3,"name":"vivek"
+           },{
+            "id":4,"name":"vivek"
+           }]}/>
             </div>
            </div>
            

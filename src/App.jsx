@@ -17,10 +17,12 @@ import {
   University,
 } from "lucide-react";
 import New from "./components/New";
+import { authLoader } from "./libs/sdk/auth/loader";
 
 const router=createBrowserRouter([
   {
     path:'/',
+    loader:authLoader,
     element:<Headers/>,
     children:[
       {

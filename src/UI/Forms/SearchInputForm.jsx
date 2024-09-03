@@ -9,7 +9,7 @@ function SearchInputForm({className}) {
       >
         Search
       </label>
-      <div className="relative w-36 h-10  mb-1 ml-2 ">
+      <div className="relative w-44 h-10   ml-2 ">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg 
             className="w-5 h-5 text-gray-500 dark:text-gray-400" 
@@ -30,8 +30,8 @@ function SearchInputForm({className}) {
         <input 
           type="search" 
           id="default-search" 
-          className="block w-full p-0 ps-10 text-s h-full  text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-600 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500" 
-          placeholder="Search  " 
+          className="block w-full pl-1 ps-10 text-s h-full  text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-600 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500" 
+          placeholder="Search " 
           required 
         />
         
