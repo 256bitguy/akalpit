@@ -3,14 +3,14 @@ import { redirect } from 'react-router-dom';
 export function authLoader() {
   if (!localStorage.getItem('AK_AUTH_TOKEN')) {
      
-    return redirect('/login'  );
+    return redirect('/auth/login'  );
   }
   return null;
 }
 
 export function unAuthenticatedLoader() {
   if (localStorage.getItem('AK_AUTH_TOKEN')) {
-    return redirect('/dashboard');
+    return redirect('/auth');
   }
   return null;
 }

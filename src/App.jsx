@@ -1,11 +1,11 @@
 import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "./UI/Auth/Login";
+import Login from "./libs/sdk/auth/screens/AuthLoginScreen";
 import Headers from "./components/Header";
 import Card from "./libs/post/Card";
 import PostCard from "./libs/post/PostCard";
 import CardTwo from "./components/CardTwo";
 import About from "./UI/About/About";
-import SignUp from "./UI/Auth/SignUp";
+
 import { AccordionAka, DrawerAka} from "./UI";
 import {
  
@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import New from "./components/New";
 import { authLoader } from "./libs/sdk/auth/loader";
+import SignUp from "./libs/sdk/auth/screens/AuthSignupScreen";
+import { authRoutes } from "./features/routes/Auth";
 
 const router=createBrowserRouter([
   {
@@ -44,10 +46,7 @@ const router=createBrowserRouter([
     path:'/postcard',
     element:<PostCard/>
   },
-  {
-    path:'/login',
-    element:<Login/>
-  },
+  
   {
     path:'/mycompany',
     element:<CardTwo/>
@@ -56,11 +55,8 @@ const router=createBrowserRouter([
     path:'/test',
     element:<New/>
   },
-  {
-    path:'/signup',
-    element:<SignUp/>
-  }
-
+   
+...authRoutes
 ])
 export default function App() {
   return (
