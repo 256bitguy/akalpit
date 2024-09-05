@@ -22,6 +22,8 @@ import SignUp from "./libs/sdk/auth/screens/AuthSignupScreen";
 import { authRoutes } from "./features/routes/Auth";
 import Profile from "./components/Profile";
 import Ptwo from "./components/Ptwo";
+import Notifications from "./components/Notifications";
+import Setting from "./components/Settings";
 
 const router=createBrowserRouter([
   {
@@ -40,6 +42,12 @@ const router=createBrowserRouter([
   {path:'/profile',
     element:<Profile />
    },
+   {path:'/notifications',
+   element:<Notifications />
+  },
+  {path:'/setting',
+   element:<Setting />
+  },
   {
     path:'/card',
     element:<Card/>

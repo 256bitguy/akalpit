@@ -10,7 +10,7 @@ export function authLoader() {
 
 export function unAuthenticatedLoader() {
   if (localStorage.getItem('AK_AUTH_TOKEN')) {
-    return redirect('/auth');
+    return redirect('/auth/login');
   }
   return null;
 }

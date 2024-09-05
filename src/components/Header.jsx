@@ -103,20 +103,22 @@ export default function Example() {
                      </div>
                      <div className="items-center flex gap-4" >
                      <Bell />
-                      <h1>Notification</h1>
+                      <Link to="/notifications"><h1>Notification</h1></Link>
                      
                      </div>
                      <div className="items-center flex gap-4" >
                      <Settings />
-                      <h1>Settings</h1>
+                     <Link to="/setting"> <h1>Settings</h1></Link>
                      
                      </div>
-                    <Link to="/auth/login">
+                     
                     <div className="items-center flex gap-4" >
-                    <LogOut />
-                      <h1>Logout</h1>
-                    </div></Link>
-                      </div> 
+                   <LogOut />
+                   <Link to='/auth/login'>
+                      <h1  >Logout</h1>
+                     </Link>
+                     </div>
+                     </div>
                      
                   </DrawerDialogAka>
                 </DrawerAka>
