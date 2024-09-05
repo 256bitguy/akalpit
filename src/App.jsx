@@ -32,10 +32,14 @@ const router=createBrowserRouter([
       {
         path:'posts',
         element:<PostCard/>
-      }
+      },
+      
     ]
 
   },
+  {path:'/profile',
+    element:<Profile/>
+   },
   {
     path:'/card',
     element:<Card/>
@@ -57,9 +61,7 @@ const router=createBrowserRouter([
     path:'/test',
     element: <Ptwo/>
   },
-   {path:'/profile',
-    element:<Profile/>
-   },
+   
 ...authRoutes
 ])
 export default function App() {
