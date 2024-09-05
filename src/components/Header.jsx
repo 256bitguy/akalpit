@@ -86,12 +86,12 @@ export default function Example() {
                         <div className="flex items-center gap-4">
                         <AvatarAka src="user.png"></AvatarAka>
                         <div>
-                          <div>
+                        <Link to="/profile" > <div>
                               <h1 className="text-2xl">bitguy_256</h1>
-                          </div>
-                          <Link to="/profile" > <div>
-                              <h1 className="text-md">vivek raj</h1>
                           </div></Link>
+                           <div>
+                              <h1 className="text-md">vivek raj</h1>
+                          </div>
                         </div>
                         </div>
                       </CardTopAka>
