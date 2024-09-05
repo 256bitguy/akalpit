@@ -21,9 +21,11 @@ DrawerButtonAka.displayName = "DrawerButtonAka";
 const DrawerDialogAka = forwardRef(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn(`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform ${
-      props.isOpen ? "translate-x-0" : "-translate-x-full"
-    } bg-white w-80 `,className)}
+    className={cn(`fixed   z-40 h-full p-4 overflow-y-auto transition-transform  
+    ${props?.profile ? `${ props.isOpen ? "-translate-y-0" : "translate-y-full"}`
+    :
+    `${props?.isOpen ? "translate-x-0" : "-translate-x-full"}` 
+  } bg-white w-80 `,className)}
     tabIndex="-1"
     aria-labelledby="drawer-label"
   >

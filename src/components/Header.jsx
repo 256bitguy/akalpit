@@ -17,12 +17,18 @@ import {
   AccordionSubtitleAka,
   AccordionTitleAka,
   AlertsAka,
+  AvatarAka,
+  CardAka,
+  CardTopAka,
   DrawerAka,
   DrawerButtonAka,
   DrawerDialogAka,
   DropDownAka,
+  ModalAka,
+  ModalButtonAka,
+  ModalContentAka,
 } from "../UI";
-import { Handshake, Newspaper, PartyPopper, University } from "lucide-react";
+import { Bell, Handshake, LogOut, Medal, Newspaper, PartyPopper, Settings, University } from "lucide-react";
 import SearchInputForm from "../UI/Forms/SearchInputForm";
 import OptionsAka from "../UI/atoms/OptionsAka";
 const user = {
@@ -53,12 +59,73 @@ export default function Example() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="h-full">
+      <div className="h-screen border border-black">
        
         <Disclosure as="nav" className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-14 items-center justify-between">
+            <DrawerAka>
+                  <DrawerButtonAka
+                    name="Show Drawer"
+                    className="button-class "
+                  >
+                   <div className="flex-shrink-0">
+                  <img
+                    alt="Your Company"
+                    src="user.png"
+                    className="h-8 w-8 rounded-lg  "
+                  />
+                </div>
+                  </DrawerButtonAka>
+
+                  <DrawerDialogAka profile="1" className="bg-white w-full top-48 border border-black left-0  flex flex-col justify-between ">
+                    <div className="mt-10 flex gap-5 flex-col">
+                     
+                     <CardAka>
+                      <CardTopAka className="   ">
+                        <div className="flex items-center gap-4">
+                        <AvatarAka src="user.png"></AvatarAka>
+                        <div>
+                          <div>
+                              <h1 className="text-2xl">bitguy_256</h1>
+                          </div>
+                          <div>
+                              <Link to="/posts" ><h1 className="text-md">vivek raj</h1></Link>
+                          </div>
+                        </div>
+                        </div>
+                      </CardTopAka>
+                     </CardAka>
+                     <div className="items-center flex gap-4" >
+                     <Medal />
+                      <h1 className="text-md">Acheivements</h1>
+                     
+                     </div>
+                     <div className="items-center flex gap-4" >
+                     <Bell />
+                      <h1>Notification</h1>
+                     
+                     </div>
+                     <div className="items-center flex gap-4" >
+                     <Settings />
+                      <h1>Settings</h1>
+                     
+                     </div>
+                    <Link to="/auth/login">
+                    <div className="items-center flex gap-4" >
+                    <LogOut />
+                      <h1>Logout</h1>
+                    </div></Link>
+                      </div> 
+                     
+                  </DrawerDialogAka>
+                </DrawerAka>
+            
+            <div>
+                  <SearchInputForm/>
+                </div>
               <div className="flex items-center">
+             
                 <div className="flex-shrink-0">
                   <img
                     alt="Your Company"
@@ -66,9 +133,7 @@ export default function Example() {
                     className="h-8 w-8 rounded-lg m-1"
                   />
                 </div>
-                <div>
-                  <SearchInputForm/>
-                </div>
+               
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
@@ -89,7 +154,7 @@ export default function Example() {
                   </div>
                 </div>
               </div>
-              <div className="hidden md:block">
+              <div className=" block">
                 <div className="ml-4 flex items-center md:ml-6">
                   <button
                     type="button"
@@ -97,7 +162,8 @@ export default function Example() {
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                    <BellIcon aria-hidden="true" className="h-8 w-8" />
+                     
+                    
                   </button>
                 </div>
               </div>
@@ -112,7 +178,7 @@ export default function Example() {
                     <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
                   </DrawerButtonAka>
 
-                  <DrawerDialogAka className="bg-white flex flex-col justify-between ">
+                  <DrawerDialogAka className="bg-white  top-0 left-0 flex flex-col justify-between ">
                     <div className="mt-10">
                     <AccordionAka className="font-bold">
                         <AccordionTitleAka
@@ -156,24 +222,29 @@ export default function Example() {
                       </AccordionAka>
                     </div>
                     <div className="flex flex-col gap-y-5">
-                      <Link to="/login">
+                      <Link to="/auth/login">
                         {" "}
                         <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
                           <button
                             className="text-md m-2 font-semibold"
-                            onClick={() => console.log("sdfagfdhg")}
+                            
                           >
                             Login
                           </button>
                         </div>
                       </Link>
                       <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                        <button
-                          className="text-md m-2 font-semibold"
-                          onClick={() => console.log("sdfagfdhg")}
-                        >
-                          Sign Up
-                        </button>
+                      <Link to="/signup">
+                        {" "}
+                        <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
+                          <button
+                            className="text-md m-2 font-semibold"
+                            
+                          >
+                            signup
+                          </button>
+                        </div>
+                      </Link>
                       </div>
                     </div>
                   </DrawerDialogAka>
@@ -230,8 +301,12 @@ export default function Example() {
             {" "}
             <Outlet />
           </div>
+         
         </main>
+        
+      
       </div>
+      
     </>
   );
 }

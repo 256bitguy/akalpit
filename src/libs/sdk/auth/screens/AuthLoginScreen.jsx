@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+// import {images} from "src/assets/Images.jsx"
 
 export default function AuthLoginScreen() {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function AuthLoginScreen() {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"
-          src="public/akalpit.png"   
+          src="akalpit.png"  
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -63,7 +63,7 @@ export default function AuthLoginScreen() {
                 Password
               </label>
               <div className="text-sm">
-                <Link to="/forgot-password" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                <Link to="/auth/forgot-password" className="font-semibold text-indigo-600 hover:text-indigo-500">
                   Forgot password?
                 </Link>
               </div>

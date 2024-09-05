@@ -25,7 +25,7 @@ const CardBotttomAka=({children, className })=>{
 }
 const CardAka = ({children, className }) => {
   return (
-    <div className={cn(" max-w-full rounded-lg shadow m-1 flex flex-col   ",className)}>
+    <div className={cn(" max-w-full rounded-lg   m-1 flex flex-col   ",className)}>
 {children}
     </div>
     

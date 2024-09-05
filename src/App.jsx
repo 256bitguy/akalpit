@@ -6,7 +6,7 @@ import PostCard from "./libs/post/PostCard";
 import CardTwo from "./components/CardTwo";
 import About from "./UI/About/About";
 
-import { AccordionAka, DrawerAka} from "./UI";
+import {   ModalAka, ModalButtonAka, ModalContentAka} from "./UI";
 import {
  
   ChevronDown,
@@ -53,7 +53,10 @@ const router=createBrowserRouter([
   },
   {
     path:'/test',
-    element:<New/>
+    element: <ModalAka>
+    <ModalButtonAka>Open Modal</ModalButtonAka>
+    <ModalContentAka />
+  </ModalAka>
   },
    
 ...authRoutes

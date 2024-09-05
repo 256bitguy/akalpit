@@ -7,7 +7,8 @@ const ButtonsAka = ({
   onClick, 
   variant = 'default', 
   ...props 
-}) => {
+  
+},ref) => {
   const baseClasses = 'focus:outline-none rounded-lg text-sm px-5 py-2.5 me-2 mb-2';
   
   // Define classes based on variant
@@ -25,6 +26,7 @@ const ButtonsAka = ({
 
   return (
     <button 
+     
       type={type} 
       className={`${baseClasses} ${variantClasses[variant]} ${className}`} 
       onClick={onClick} 

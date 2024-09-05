@@ -9,7 +9,7 @@ function SearchInputForm({className}) {
       >
         Search
       </label>
-      <div className="relative w-44 h-10   ml-2 ">
+      <div className="relative w-24 h-10   ml-2 ">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
           <svg 
             className="w-5 h-5 text-gray-500 dark:text-gray-400" 
