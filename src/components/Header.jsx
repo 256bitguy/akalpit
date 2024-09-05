@@ -90,7 +90,7 @@ export default function Example() {
                               <h1 className="text-2xl">bitguy_256</h1>
                           </div>
                           <div>
-                              <Link to="/posts" ><h1 className="text-md">vivek raj</h1></Link>
+                              <Link to="/profile" ><h1 className="text-md">vivek raj</h1></Link>
                           </div>
                         </div>
                         </div>
@@ -111,7 +111,7 @@ export default function Example() {
                       <h1>Settings</h1>
                      
                      </div>
-                    <Link to="/auth/login">
+                    <Link to="/auth">
                     <div className="items-center flex gap-4" >
                     <LogOut />
                       <h1>Logout</h1>

@@ -20,6 +20,8 @@ import New from "./components/New";
 import { authLoader } from "./libs/sdk/auth/loader";
 import SignUp from "./libs/sdk/auth/screens/AuthSignupScreen";
 import { authRoutes } from "./features/routes/Auth";
+import Profile from "./components/Profile";
+import Ptwo from "./components/Ptwo";
 
 const router=createBrowserRouter([
   {
@@ -53,12 +55,11 @@ const router=createBrowserRouter([
   },
   {
     path:'/test',
-    element: <ModalAka>
-    <ModalButtonAka>Open Modal</ModalButtonAka>
-    <ModalContentAka />
-  </ModalAka>
+    element: <Ptwo/>
   },
-   
+   {path:'/profile',
+    element:<Profile/>
+   },
 ...authRoutes
 ])
 export default function App() {

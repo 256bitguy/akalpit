@@ -8,6 +8,7 @@ import ForgotPasswordPage from '../../libs/sdk/auth/screens/ForgotPassword';
 export const authRoutes = [
   {
     path: '/auth',
+     
     children: [
       {
         path: 'login',
