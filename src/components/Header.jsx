@@ -89,9 +89,9 @@ export default function Example() {
                           <div>
                               <h1 className="text-2xl">bitguy_256</h1>
                           </div>
-                          <div>
-                              <Link to="/profile" ><h1 className="text-md">vivek raj</h1></Link>
-                          </div>
+                          <Link to="/profile" > <div>
+                              <h1 className="text-md">vivek raj</h1>
+                          </div></Link>
                         </div>
                         </div>
                       </CardTopAka>
@@ -111,7 +111,7 @@ export default function Example() {
                       <h1>Settings</h1>
                      
                      </div>
-                    <Link to="/auth">
+                    <Link to="/auth/login">
                     <div className="items-center flex gap-4" >
                     <LogOut />
                       <h1>Logout</h1>
