@@ -1,6 +1,6 @@
 import React from 'react';
-import Carousel from 'react-responsive-carousel'; // Ensure you have react-responsive-carousel installed
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel styles
+ 
+ 
 import { CarouselAka } from '../UI';
 const images=[
     {
@@ -23,7 +23,7 @@ const images=[
 const Ptwo = () => {
   return (
     <div className="bg-gray-200 min-h-screen p-6">
-      {/* Carousel with Background Image */}
+    
       <div className='relative opacity-20' >
       <CarouselAka images={images} ></CarouselAka>
         
