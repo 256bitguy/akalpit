@@ -94,7 +94,7 @@ export default function AuthLoginScreen() {
 
         <p className="mt-10 text-center text-sm text-gray-500">
           Not an artist?{' '}
-          <Link to="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+          <Link to="/auth/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
             Create your new World!
           </Link>
         </p>
