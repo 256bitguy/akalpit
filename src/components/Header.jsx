@@ -1,17 +1,12 @@
-import {
-  Disclosure,
-  
-} from "@headlessui/react";
-import { Bars3Icon,  } from "@heroicons/react/24/outline";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Outlet, useNavigate, Link } from "react-router-dom";
- 
- 
+
 import { useState } from "react";
 import {
   AccordionAka,
   AccordionSubtitleAka,
   AccordionTitleAka,
- 
   AvatarAka,
   CardAka,
   CardTopAka,
@@ -19,7 +14,6 @@ import {
   DrawerButtonAka,
   DrawerDialogAka,
   DropDownAka,
- 
 } from "../UI";
 import {
   Bell,
@@ -32,7 +26,7 @@ import {
   University,
 } from "lucide-react";
 import SearchInputForm from "../UI/Forms/SearchInputForm";
- 
+
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
