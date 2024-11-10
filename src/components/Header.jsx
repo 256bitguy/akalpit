@@ -1,22 +1,17 @@
 import {
   Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
+  
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon,  } from "@heroicons/react/24/outline";
 import { Outlet, useNavigate, Link } from "react-router-dom";
-import DefaultAccordion from "../libs/atoms/DefaultAccordion";
-import Dialogs from "./Dialog";
+ 
+ 
 import { useState } from "react";
 import {
   AccordionAka,
   AccordionSubtitleAka,
   AccordionTitleAka,
-  AlertsAka,
+ 
   AvatarAka,
   CardAka,
   CardTopAka,
@@ -24,13 +19,20 @@ import {
   DrawerButtonAka,
   DrawerDialogAka,
   DropDownAka,
-  ModalAka,
-  ModalButtonAka,
-  ModalContentAka,
+ 
 } from "../UI";
-import { Bell, Handshake, LogOut, Medal, Newspaper, PartyPopper, Settings, University } from "lucide-react";
+import {
+  Bell,
+  Handshake,
+  LogOut,
+  Medal,
+  Newspaper,
+  PartyPopper,
+  Settings,
+  University,
+} from "lucide-react";
 import SearchInputForm from "../UI/Forms/SearchInputForm";
-import OptionsAka from "../UI/atoms/OptionsAka";
+ 
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
@@ -60,74 +62,75 @@ export default function Example() {
   return (
     <>
       <div className="h-screen border border-black">
-       
         <Disclosure as="nav" className="bg-gray-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-14 items-center justify-between">
-            <DrawerAka>
-                  <DrawerButtonAka
-                    name="Show Drawer"
-                    className="button-class "
-                  >
-                   <div className="flex-shrink-0">
-                  <img
-                    alt="Your Company"
-                    src="user.png"
-                    className="h-8 w-8 rounded-lg  "
-                  />
-                </div>
-                  </DrawerButtonAka>
+              <DrawerAka>
+                <DrawerButtonAka name="Show Drawer" className="button-class ">
+                  <div className="flex-shrink-0">
+                    <img
+                      alt="Your Company"
+                      src="user.png"
+                      className="h-8 w-8 rounded-lg  "
+                    />
+                  </div>
+                </DrawerButtonAka>
 
-                  <DrawerDialogAka profile="1" className="bg-white w-full top-48 border border-black left-0  flex flex-col justify-between ">
-                    <div className="mt-10 flex gap-5 flex-col">
-                     
-                     <CardAka>
+                <DrawerDialogAka
+                  profile="1"
+                  className="bg-white w-full top-48 border border-black left-0  flex flex-col justify-between "
+                >
+                  <div className="mt-10 flex gap-5 flex-col">
+                    <CardAka>
                       <CardTopAka className="   ">
                         <div className="flex items-center gap-4">
-                        <AvatarAka src="user.png"></AvatarAka>
-                        <div>
-                        <Link to="/profile" > <div>
-                              <h1 className="text-2xl">bitguy_256</h1>
-                          </div></Link>
-                           <div>
+                          <AvatarAka src="user.png"></AvatarAka>
+                          <div>
+                            <Link to="/profile">
+                              {" "}
+                              <div>
+                                <h1 className="text-2xl">bitguy_256</h1>
+                              </div>
+                            </Link>
+                            <div>
                               <h1 className="text-md">vivek raj</h1>
+                            </div>
                           </div>
                         </div>
-                        </div>
                       </CardTopAka>
-                     </CardAka>
-                     <div className="items-center flex gap-4" >
-                     <Medal />
+                    </CardAka>
+                    <div className="items-center flex gap-4">
+                      <Medal />
                       <h1 className="text-md">Acheivements</h1>
-                     
-                     </div>
-                     <div className="items-center flex gap-4" >
-                     <Bell />
-                      <Link to="/notifications"><h1>Notification</h1></Link>
-                     
-                     </div>
-                     <div className="items-center flex gap-4" >
-                     <Settings />
-                     <Link to="/setting"> <h1>Settings</h1></Link>
-                     
-                     </div>
-                     
-                    <div className="items-center flex gap-4" >
-                   <LogOut />
-                   <Link to='/auth/login'>
-                      <h1  >Logout</h1>
-                     </Link>
-                     </div>
-                     </div>
-                     
-                  </DrawerDialogAka>
-                </DrawerAka>
-            
-            <div>
-                  <SearchInputForm/>
-                </div>
+                    </div>
+                    <div className="items-center flex gap-4">
+                      <Bell />
+                      <Link to="/notifications">
+                        <h1>Notification</h1>
+                      </Link>
+                    </div>
+                    <div className="items-center flex gap-4">
+                      <Settings />
+                      <Link to="/setting">
+                        {" "}
+                        <h1>Settings</h1>
+                      </Link>
+                    </div>
+
+                    <div className="items-center flex gap-4">
+                      <LogOut />
+                      <Link to="/auth/login">
+                        <h1>Logout</h1>
+                      </Link>
+                    </div>
+                  </div>
+                </DrawerDialogAka>
+              </DrawerAka>
+
+              <div>
+                <SearchInputForm />
+              </div>
               <div className="flex items-center">
-             
                 <div className="flex-shrink-0">
                   <img
                     alt="Your Company"
@@ -135,7 +138,7 @@ export default function Example() {
                     className="h-8 w-8 rounded-lg m-1"
                   />
                 </div>
-               
+
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
@@ -147,7 +150,7 @@ export default function Example() {
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium",
+                          "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                       >
                         {item.name}
@@ -164,14 +167,12 @@ export default function Example() {
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                     
-                    
                   </button>
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
                 {/* Mobile menu button */}
-                   
+
                 <DrawerAka>
                   <DrawerButtonAka
                     name="Show Drawer"
@@ -182,7 +183,7 @@ export default function Example() {
 
                   <DrawerDialogAka className="bg-white  top-0 left-0 flex flex-col justify-between ">
                     <div className="mt-10">
-                    <AccordionAka className="font-bold">
+                      <AccordionAka className="font-bold">
                         <AccordionTitleAka
                           title="New"
                           className="  text-gray-500"
@@ -227,26 +228,20 @@ export default function Example() {
                       <Link to="/auth/login">
                         {" "}
                         <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                          <button
-                            className="text-md m-2 font-semibold"
-                            
-                          >
+                          <button className="text-md m-2 font-semibold">
                             Login
                           </button>
                         </div>
                       </Link>
                       <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                      <Link to="/signup">
-                        {" "}
-                        <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                          <button
-                            className="text-md m-2 font-semibold"
-                            
-                          >
-                            signup
-                          </button>
-                        </div>
-                      </Link>
+                        <Link to="/signup">
+                          {" "}
+                          <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
+                            <button className="text-md m-2 font-semibold">
+                              signup
+                            </button>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </DrawerDialogAka>
@@ -258,35 +253,61 @@ export default function Example() {
 
         <header className="bg-white shadow">
           <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
-           <div className="flex gap-10">
-           <div className="w-16  text-xs">
-           <DropDownAka list={[{
-            "id":0,"name":"vidsfvek"
-           },{
-            "id":1,"name":"vivsdfsdfek"
-           },{
-            "id":2,"name":"viasddvek"
-           },{
-            "id":3,"name":"viasdasvek"
-           },{
-            "id":4,"name":"viasdvek"
-           }]}/>
+            <div className="flex gap-10">
+              <div className="w-16  text-xs">
+                <DropDownAka
+                  list={[
+                    {
+                      id: 0,
+                      name: "vidsfvek",
+                    },
+                    {
+                      id: 1,
+                      name: "vivsdfsdfek",
+                    },
+                    {
+                      id: 2,
+                      name: "viasddvek",
+                    },
+                    {
+                      id: 3,
+                      name: "viasdasvek",
+                    },
+                    {
+                      id: 4,
+                      name: "viasdvek",
+                    },
+                  ]}
+                />
+              </div>
+              <div className="w-16  text-xs">
+                <DropDownAka
+                  list={[
+                    {
+                      id: 0,
+                      name: "vivek",
+                    },
+                    {
+                      id: 1,
+                      name: "vivek",
+                    },
+                    {
+                      id: 2,
+                      name: "vivek",
+                    },
+                    {
+                      id: 3,
+                      name: "vivek",
+                    },
+                    {
+                      id: 4,
+                      name: "vivek",
+                    },
+                  ]}
+                />
+              </div>
             </div>
-            <div className="w-16  text-xs">
-            <DropDownAka list={[{
-            "id":0,"name":"vivek"
-           },{
-            "id":1,"name":"vivek"
-           },{
-            "id":2,"name":"vivek"
-           },{
-            "id":3,"name":"vivek"
-           },{
-            "id":4,"name":"vivek"
-           }]}/>
-            </div>
-           </div>
-           
+
             <div className="  text-md rounded-md bg-gray-700 text-white">
               <button
                 className="text-xs m-2 font-semibold"
@@ -299,16 +320,12 @@ export default function Example() {
         </header>
 
         <main>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto    sm:px-6 lg:px-8">
             {" "}
             <Outlet />
           </div>
-         
         </main>
-        
-      
       </div>
-      
     </>
   );
 }

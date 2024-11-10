@@ -1,29 +1,30 @@
-import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Login from "./libs/sdk/auth/screens/AuthLoginScreen";
+import {   RouterProvider, createBrowserRouter } from "react-router-dom";
+// import Login from "./libs/sdk/auth/screens/AuthLoginScreen";
 import Headers from "./components/Header";
 import Card from "./libs/post/Card";
 import PostCard from "./libs/post/PostCard";
 import CardTwo from "./components/CardTwo";
 import About from "./UI/About/About";
 
-import {   ModalAka, ModalButtonAka, ModalContentAka} from "./UI";
-import {
+// import {   ModalAka, ModalButtonAka, ModalContentAka} from "./UI";
+// import {
  
-  ChevronDown,
-  ChevronUp,
-  Handshake,
-  Newspaper,
-  PartyPopper,
-  University,
-} from "lucide-react";
-import New from "./components/New";
+//   ChevronDown,
+//   ChevronUp,
+//   Handshake,
+//   Newspaper,
+//   PartyPopper,
+//   University,
+// } from "lucide-react";
+// import New from "./components/New";
 import { authLoader } from "./libs/sdk/auth/loader";
-import SignUp from "./libs/sdk/auth/screens/AuthSignupScreen";
+// import SignUp from "./libs/sdk/auth/screens/AuthSignupScreen";
 import { authRoutes } from "./features/routes/Auth";
 import Profile from "./components/Profile";
 import Ptwo from "./components/Ptwo";
 import Notifications from "./components/Notifications";
 import Setting from "./components/Settings";
+import Home from "./components/Home";
 
 const router=createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router=createBrowserRouter([
     loader:authLoader,
     element:<Headers/>,
     children:[
+      {
+        index: true, // Indicates that this is the default route for the parent
+        element: <Home />
+      },
       {
         path:'posts',
         element:<PostCard/>
