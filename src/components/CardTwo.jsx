@@ -1,5 +1,6 @@
 import { cn } from "../libs/utils/utils";
 import MyCompanyCard from "./MyCompanyCard";
+import New2 from "./New2";
  
  
   
@@ -22,10 +23,13 @@ import MyCompanyCard from "./MyCompanyCard";
 
        </div>
        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-400 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none sm:self-center sm:grid-cols-1">
+    
+       <MyCompanyCard />
        <MyCompanyCard/>
        <MyCompanyCard/>
        <MyCompanyCard/>
-       <MyCompanyCard/>
+      
+       
       </div>
      </div>
       </div>

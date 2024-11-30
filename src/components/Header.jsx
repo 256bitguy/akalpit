@@ -1,124 +1,316 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import DefaultAccordion from '../libs/atoms/DefaultAccordion'
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Outlet, useNavigate, Link, useLocation } from "react-router-dom";
 
-import { useState } from 'react';
+import {
+  AccordionAka,
+  AccordionSubtitleAka,
+  AccordionTitleAka,
+  AvatarAka,
+  CardAka,
+  CardTopAka,
+  DrawerAka,
+  DrawerButtonAka,
+  DrawerDialogAka,
+  DropDownAka,
+} from "../UI";
+import {
+  Bell,
+  Handshake,
+  LogOut,
+  Medal,
+  Newspaper,
+  PartyPopper,
+  Settings,
+  University,
+} from "lucide-react";
+import SearchInputForm from "../UI/Forms/SearchInputForm";
+
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-]
-const routing=[
-    {message : "Community"},
-    {message : "Resources"},
-    {message : "Akalpit"}
-]
+  { name: "Dashboard", href: "#", current: true },
+  { name: "Team", href: "#", current: false },
+  { name: "Projects", href: "#", current: false },
+  { name: "Calendar", href: "#", current: false },
+  { name: "Reports", href: "#", current: false },
+];
+
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
-function Headers() {
-    const [open, setOpen] = useState(1);
-    const handleOpen = (value) => setOpen(open === value ? 0 : value);
+export default function Home() {
+  const location = useLocation();
+  console.log(location.pathname);
+  const navigate = useNavigate();
   return (
-    <Disclosure as="nav" className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
-              <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
-            </DisclosureButton>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              <img
-                alt="Your Company"
-                src="public/akalpit.png"
-                className="h-8 w-auto"
-              />
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'rounded-md px-3 py-2 text-sm font-medium',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="h-6 w-6" />
-            </button>
+    <>
+      <div className="h-full border   border-black">
+        <Disclosure as="nav" className="bg-gray-800 pb-2">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex h-14 items-center justify-between">
+              <DrawerAka>
+                <DrawerButtonAka name="Show Drawer" className="button-class ">
+                  <div className="flex-shrink-0">
+                    <img
+                      alt="Your Company"
+                      src="user.png"
+                      className="h-8 w-8 rounded-lg  "
+                    />
+                  </div>
+                </DrawerButtonAka>
 
-            {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+                <DrawerDialogAka
+                  profile="1"
+                  className="bg-white w-128 top-48 border border-black self-center left-0  flex flex-col justify-between "
+                >
+                  <div className="mt-10 flex gap-5 flex-col">
+                    <CardAka>
+                      <CardTopAka className="   ">
+                        <div className="flex items-center gap-4">
+                          <AvatarAka src="user.png"></AvatarAka>
+                          <div>
+                            <Link to="/profile">
+                              {" "}
+                              <div>
+                                <h1 className="text-2xl">bitguy_256</h1>
+                              </div>
+                            </Link>
+                            <div>
+                              <h1 className="text-md">vivek raj</h1>
+                            </div>
+                          </div>
+                        </div>
+                      </CardTopAka>
+                    </CardAka>
+                    <div className="items-center flex gap-4">
+                      <Medal />
+                      <h1 className="text-md">Acheivements</h1>
+                    </div>
+                    <div className="items-center flex gap-4">
+                      <Bell />
+                      <Link to="/notifications">
+                        <h1>Notification</h1>
+                      </Link>
+                    </div>
+                    <div className="items-center flex gap-4">
+                      <Settings />
+                      <Link to="/setting">
+                        {" "}
+                        <h1>Settings</h1>
+                      </Link>
+                    </div>
+
+                    <div className="items-center flex gap-4">
+                      <LogOut />
+                      <Link to="/auth/login">
+                        <h1>Logout</h1>
+                      </Link>
+                    </div>
+                  </div>
+                </DrawerDialogAka>
+              </DrawerAka>
+
               <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt=""
-                    src="public/user.png"
-                    className="h-8 w-8 rounded-full"
-                  />
-                </MenuButton>
+                <SearchInputForm />
               </div>
-              <MenuItems
-                transition
-                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-              >
-                <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                    Your Profile
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                    Settings
-                  </a>
-                </MenuItem>
-                <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                    Sign out
-                  </a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+              <div className="flex items-center">
+                <div className="flex-shrink-0">
+                  <Link to="/">
+                    <img
+                      alt="Your Company"
+                      src="akalpit.png"
+                      className="h-8 w-8 rounded-lg m-1"
+                    />
+                  </Link>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="ml-10 flex items-baseline space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        aria-current={item.current ? "page" : undefined}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
+                        )}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className=" block">
+                <div className="ml-4 flex items-center md:ml-6">
+                  <button
+                    type="button"
+                    className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  >
+                    <span className="absolute -inset-1.5" />
+                    <span className="sr-only">View notifications</span>
+                  </button>
+                </div>
+              </div>
+              <div className="-mr-2 flex  ">
+                {/* Mobile menu button */}
+
+                <DrawerAka>
+                  <DrawerButtonAka
+                    name="Show Drawer"
+                    className="button-class bg-white"
+                  >
+                    <Bars3Icon aria-hidden="true" className="block h-6 w-6" />
+                  </DrawerButtonAka>
+
+                  <DrawerDialogAka className="bg-white  top-0 left-0 flex flex-col justify-between ">
+                    <div className="mt-10">
+                      <AccordionAka className="font-bold">
+                        <AccordionTitleAka
+                          title="New"
+                          className="  text-gray-500"
+                        />
+                        <AccordionSubtitleAka className="flex bg-black">
+                          <div className="grid grid-flow-row gap-3 p-2 mb-2">
+                            <Link to="/posts">
+                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
+                                <Newspaper size={25} fill="#4da6ff" />
+                                <p className="ml-3 text-lg">Feed</p>
+                              </div>
+                            </Link>
+                            <Link to="/mycompany">
+                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
+                                <University size={25} fill="#4da6ff" />
+                                <p className="ml-3 text-lg">All Channels</p>
+                              </div>
+                            </Link>
+                            <Link to="/card">
+                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
+                                <Handshake size={25} fill="#4da6ff" />
+                                <p className="ml-3 text-lg">Competition</p>
+                              </div>
+                            </Link>
+                            <Link to="/mycompany">
+                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
+                                <PartyPopper size={25} fill="#4da6ff" />
+                                <p className="ml-3 text-lg">Events</p>
+                              </div>
+                            </Link>
+                            <Link to="/card">
+                              <div className="flex align-center bg-gray-100 p-2 rounded-xl">
+                                <University size={25} fill="#4da6ff" />
+                                <p className="ml-3 text-lg">My University</p>
+                              </div>
+                            </Link>
+                          </div>
+                        </AccordionSubtitleAka>
+                      </AccordionAka>
+                    </div>
+                    <div className="flex flex-col gap-y-5">
+                      <Link to="/auth/login">
+                        {" "}
+                        <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
+                          <div className="text-md m-2 font-semibold">Login</div>
+                        </div>
+                      </Link>
+                      <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
+                        <Link to="auth/signup">
+                          {" "}
+                          <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
+                            <button className="text-md m-2 font-semibold">
+                              signup
+                            </button>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                  </DrawerDialogAka>
+                </DrawerAka>
+              </div>
+            </div>
           </div>
-        </div>
+        </Disclosure>
+
+        {location.pathname.includes("/posts") && (
+          <header className="bg-white shadow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
+              <div className="flex gap-10">
+                <div className="w-16  text-xs">
+                  <DropDownAka
+                    list={[
+                      {
+                        id: 0,
+                        name: "vidsfvek",
+                      },
+                      {
+                        id: 1,
+                        name: "vivsdfsdfek",
+                      },
+                      {
+                        id: 2,
+                        name: "viasddvek",
+                      },
+                      {
+                        id: 3,
+                        name: "viasdasvek",
+                      },
+                      {
+                        id: 4,
+                        name: "viasdvek",
+                      },
+                    ]}
+                  />
+                </div>
+                <div className="w-16  text-xs">
+                  <DropDownAka
+                    list={[
+                      {
+                        id: 0,
+                        name: "vivek",
+                      },
+                      {
+                        id: 1,
+                        name: "vivek",
+                      },
+                      {
+                        id: 2,
+                        name: "vivek",
+                      },
+                      {
+                        id: 3,
+                        name: "vivek",
+                      },
+                      {
+                        id: 4,
+                        name: "vivek",
+                      },
+                    ]}
+                  />
+                </div>
+              </div>
+
+              <div className="  text-md rounded-md bg-gray-700 text-white">
+                <button
+                  className="text-xs m-2 font-semibold"
+                  onClick={() => navigate("/test")}
+                >
+                  All channels
+                </button>
+              </div>
+            </div>
+          </header>
+        )}
+
+        <main>
+          <div className="  ">
+            {" "}
+            <Outlet />
+          </div>
+        </main>
       </div>
-
-      <DisclosurePanel className="sm:hidden">
-     {
-        routing.map((item)=>{
-            return(
-                <DefaultAccordion message={item.message}/>
-            )
-        })
-     }
-      </DisclosurePanel>
-    </Disclosure>
-  )
+    </>
+  );
 }
-
-export default Headers

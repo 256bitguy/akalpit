@@ -10,7 +10,7 @@ export function Profile() {
   return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center scale-105" />
+        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/pattern.png')] bg-cover bg-center scale-105" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
       </section>
       <section className="relative bg-white py-16">
@@ -19,7 +19,7 @@ export function Profile() {
             <div className="flex flex-col lg:flex-row justify-between">
               <div className="relative flex gap-6 items-start">
                 <div className="-mt-20 w-40">
-                  <Avatar
+                <Avatar
                     src="/img/team-5.png"
                     alt="Profile picture"
                     variant="circular"
@@ -28,9 +28,9 @@ export function Profile() {
                 </div>
                 <div className="flex flex-col mt-2">
                   <Typography variant="h4" color="blue-gray">
-                    Soumya mishra
+                   Bikku bhai
                   </Typography>
-                  <Typography variant="paragraph" color="gray" className="!mt-0 font-normal">soumyaaa782@gmail.com</Typography>
+                  <Typography variant="paragraph" color="gray" className="!mt-0 font-normal">vivekraj@gmail.com</Typography>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ export function Profile() {
             <div className="mb-10 py-6">
               <div className="flex w-full flex-col items-start lg:w-1/2">
                 <Typography className="mb-6 font-normal text-blue-gray-500">
-                Soumya Mishra, a second-year student of Journalism and Mass Communication, a political enthusiast is an aspiring news anchor and visual artist with remarkable public speaking and oratory skills. Actively participating in Model UN, debates, and particularly Indian Committees, she has demonstrated a strong command over committee discussions and deliberations. Soumya has earned accolades for her abilities as an editor, author, anchor, speaker, and debater. She believes that success in any forum comes from thorough research, persuasive debate, and an unwavering dedication.
+                vivek raj, a second-year student of Journalism and Mass Communication, a political enthusiast is an aspiring news anchor and visual artist with remarkable public speaking and oratory skills. Actively participating in Model UN, debates, and particularly Indian Committees, she has demonstrated a strong command over committee discussions and deliberations. Soumya has earned accolades for her abilities as an editor, author, anchor, speaker, and debater. She believes that success in any forum comes from thorough research, persuasive debate, and an unwavering dedication.
                 </Typography>
                 <Button variant="text">Show more</Button>
               </div>
