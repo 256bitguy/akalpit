@@ -67,7 +67,7 @@ export function Home() {
                 className="mb-3 font-bold"
                 color="blue-gray"
               >
-                Working with us is a pleasure
+                Join the community of Literature
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
                   let your uses guess by attaching tooltips and popoves to
@@ -96,19 +96,17 @@ export function Home() {
                     color="blue-gray"
                     className="font-normal"
                   >
-                    Enterprise
+                    Community name
                   </Typography>
                   <Typography
                     variant="h5"
                     color="blue-gray"
                     className="mb-3 mt-2 font-bold"
                   >
-                    Top Notch Services
+                    Event name
                   </Typography>
                   <Typography className="font-normal text-blue-gray-500">
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens.
+                    This is about the competition for the next event or what is going to be about.
                   </Typography>
                 </CardBody>
               </Card>
@@ -118,10 +116,8 @@ export function Home() {
       </section>
       <section className="px-4 pt-20 pb-48">
         <div className="container mx-auto">
-          <PageTitle section="Our Team" heading="Here are our heroes">
-            According to the National Oceanic and Atmospheric Administration,
-            Ted, Scambos, NSIDClead scentist, puts the potentially record
-            maximum.
+          <PageTitle section="Top Profiles" heading="Here are our heroes">
+            In the recent events these were those persons who performed their best 
           </PageTitle>
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
             {teamData.map(({ img, name, position, socials }) => (
@@ -173,11 +169,11 @@ export function Home() {
               </Card>
             ))}
           </div>
-          <PageTitle section="Contact Us" heading="Want to work with us?">
+          <PageTitle section="Join Our Community" heading="Want to compete with others?">
             Complete this form and we will get back to you in 24 hours.
           </PageTitle>
           <form className="mx-auto w-full mt-12 lg:w-5/12">
-            <div className="mb-8 flex gap-8">
+            <div className="mb-8 flex  flex-col gap-8">
               <Input variant="outlined" size="lg" label="Full Name" />
               <Input variant="outlined" size="lg" label="Email Address" />
             </div>

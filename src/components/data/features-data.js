@@ -5,24 +5,24 @@ import {
 export const featuresData = [
   {
     color: "gray",
-    title: "Awarded Agency",
+    title: "ALL WRITERS WELCOME",
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      " Akalpit welcomes writers of all interests and skill levels. Whether you're a writer looking for the perfect place to store and display your poetry, stories and other writing or a reader willing to offer feedback for our writers and their writings, this is the website for you. Meet and bond with fresh creative minds!.",
   },
   {
     color: "gray",
-    title: "Free Revisions",
+    title: "COMPETITIVE ENVIRONMENT",
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "Akalpit is a writers' playground, full of useful tools, inspirations, community support, and motivation! We offer writers hundreds of unique writing tools and opportunities for creation and productivity: your own portfolio, community newsfeed, contests, activities, rewards, and recognitions!.",
   },
   {
     color: "gray",
-    title: "Verified Company",
+    title: "  STORE YOUR WRITING ",
     icon: ChatBubbleBottomCenterTextIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+      "All members may display up to ten items for free in their own portfolio. Set these to private or public display and edit any time you wish! We provide members with many ways to share these items within the community and beyond.",
   },
 ];
 

@@ -1,60 +1,46 @@
-import { unAuthenticatedLoader } from '../../libs/sdk/auth/loader';
-import AuthLoginScreen from '../../libs/sdk/auth/screens/AuthLoginScreen';
-import AuthSignupScreen from '../../libs/sdk/auth/screens/AuthSignupScreen';
-import ForgotPasswordPage from '../../libs/sdk/auth/screens/ForgotPassword';
- 
- 
+import { unAuthenticatedLoader } from "../../UI/Auth/auth/loader";
+import AuthLoginScreen from "../../UI/Auth/auth/screens/AuthLoginScreen";
+import AuthSignupScreen from "../../UI/Auth/auth/screens/AuthSignupScreen";
+import ForgotPasswordPage from "../../UI/Auth/auth/screens/ForgotPassword";
 
 export const authRoutes = [
   {
-    path: '/auth',
-     
+    path: "auth",
+
     children: [
       {
-        path: 'login',
-        loader: unAuthenticatedLoader,
-        element: (
-          
-            <AuthLoginScreen />
-        
-        ),
+        path: "login",
+        index: true, // Indicates that this is the default route for the parent
+        element: <AuthLoginScreen />,
       },
+
       {
-        path: 'signup',
-        loader: unAuthenticatedLoader,
-        element: (
-         
-            <AuthSignupScreen />
-        
-        ),
+        path: "signup",
+        element: <AuthSignupScreen />,
       },
-    //   {
-    //     path: 'sso',
-    //     loader: ssoLoader,
-    //     element: (
-    //       <AppProviders>
-    //         <SsoScreen />
-    //       </AppProviders>
-    //     ),
-    //   },
+      //   {
+      //     path: 'sso',
+      //     loader: ssoLoader,
+      //     element: (
+      //       <AppProviders>
+      //         <SsoScreen />
+      //       </AppProviders>
+      //     ),
+      //   },
       {
-        path: 'forgot-password',
+        path: "forgot-password",
         loader: unAuthenticatedLoader,
-        element: (
-        
-            <ForgotPasswordPage />
-        
-        ),
+        element: <ForgotPasswordPage />,
       },
-    //   {
-    //     path: 'reset-password',
-    //     loader: unAuthenticatedLoader,
-    //     element: (
-         
-    //         <ResetPassword />
-       
-    //     ),
-    //   },
+      //   {
+      //     path: 'reset-password',
+      //     loader: unAuthenticatedLoader,
+      //     element: (
+
+      //         <ResetPassword />
+
+      //     ),
+      //   },
     ],
   },
 ];

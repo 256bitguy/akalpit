@@ -269,7 +269,7 @@ export default function AuthLoginScreen() {
             className="text-center text-blue-gray-500 font-medium mt-4"
           >
             Not registered?
-            <Link to="/sign-up" className="text-gray-900 ml-1">
+            <Link to="/auth/signup" replace={true} className="text-gray-900 ml-1">
               Create account
             </Link>
           </Typography>

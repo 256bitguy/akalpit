@@ -73,7 +73,7 @@ const About = () => {
     </div>
       </section>
       <footer className="text-center mt-12 border-t border-gray-200 pt-6">
-        <p className="text-gray-600">&copy; 2024 FakeCorp. All rights reserved.</p>
+        <p className="text-gray-600">&copy; 2024 Akalpit. All rights reserved.</p>
       </footer>
     </div>
   );

@@ -1,8 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { Outlet, useNavigate, Link } from "react-router-dom";
+import { Outlet, useNavigate, Link, useLocation } from "react-router-dom";
 
-import { useState } from "react";
 import {
   AccordionAka,
   AccordionSubtitleAka,
@@ -27,12 +26,6 @@ import {
 } from "lucide-react";
 import SearchInputForm from "../UI/Forms/SearchInputForm";
 
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
   { name: "Team", href: "#", current: false },
@@ -40,23 +33,19 @@ const navigation = [
   { name: "Calendar", href: "#", current: false },
   { name: "Reports", href: "#", current: false },
 ];
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
-  const [abcd, setAbcd] = useState(true);
+export default function Home() {
+  const location = useLocation();
+  console.log(location.pathname);
   const navigate = useNavigate();
   return (
     <>
-      <div className="h-screen border border-black">
-        <Disclosure as="nav" className="bg-gray-800">
+      <div className="h-full border   border-black">
+        <Disclosure as="nav" className="bg-gray-800 pb-2">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-14 items-center justify-between">
               <DrawerAka>
@@ -72,7 +61,7 @@ export default function Example() {
 
                 <DrawerDialogAka
                   profile="1"
-                  className="bg-white w-full top-48 border border-black left-0  flex flex-col justify-between "
+                  className="bg-white w-128 top-48 border border-black self-center left-0  flex flex-col justify-between "
                 >
                   <div className="mt-10 flex gap-5 flex-col">
                     <CardAka>
@@ -126,11 +115,13 @@ export default function Example() {
               </div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <img
-                    alt="Your Company"
-                    src="akalpit.png"
-                    className="h-8 w-8 rounded-lg m-1"
-                  />
+                  <Link to="/">
+                    <img
+                      alt="Your Company"
+                      src="akalpit.png"
+                      className="h-8 w-8 rounded-lg m-1"
+                    />
+                  </Link>
                 </div>
 
                 <div className="hidden md:block">
@@ -164,7 +155,7 @@ export default function Example() {
                   </button>
                 </div>
               </div>
-              <div className="-mr-2 flex md:hidden">
+              <div className="-mr-2 flex  ">
                 {/* Mobile menu button */}
 
                 <DrawerAka>
@@ -184,7 +175,7 @@ export default function Example() {
                         />
                         <AccordionSubtitleAka className="flex bg-black">
                           <div className="grid grid-flow-row gap-3 p-2 mb-2">
-                            <Link to="/postcard">
+                            <Link to="/posts">
                               <div className="flex align-center bg-gray-100 p-2 rounded-xl">
                                 <Newspaper size={25} fill="#4da6ff" />
                                 <p className="ml-3 text-lg">Feed</p>
@@ -222,13 +213,11 @@ export default function Example() {
                       <Link to="/auth/login">
                         {" "}
                         <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                          <button className="text-md m-2 font-semibold">
-                            Login
-                          </button>
+                          <div className="text-md m-2 font-semibold">Login</div>
                         </div>
                       </Link>
                       <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
-                        <Link to="/signup">
+                        <Link to="auth/signup">
                           {" "}
                           <div className="mx-5 text-md rounded-md text-center bg-gray-700 text-white">
                             <button className="text-md m-2 font-semibold">
@@ -245,76 +234,78 @@ export default function Example() {
           </div>
         </Disclosure>
 
-        <header className="bg-white shadow">
-          <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
-            <div className="flex gap-10">
-              <div className="w-16  text-xs">
-                <DropDownAka
-                  list={[
-                    {
-                      id: 0,
-                      name: "vidsfvek",
-                    },
-                    {
-                      id: 1,
-                      name: "vivsdfsdfek",
-                    },
-                    {
-                      id: 2,
-                      name: "viasddvek",
-                    },
-                    {
-                      id: 3,
-                      name: "viasdasvek",
-                    },
-                    {
-                      id: 4,
-                      name: "viasdvek",
-                    },
-                  ]}
-                />
+        {location.pathname.includes("/posts") && (
+          <header className="bg-white shadow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center max-w-7xl px-2  py-2 sm:px-6 lg:px-8">
+              <div className="flex gap-10">
+                <div className="w-16  text-xs">
+                  <DropDownAka
+                    list={[
+                      {
+                        id: 0,
+                        name: "vidsfvek",
+                      },
+                      {
+                        id: 1,
+                        name: "vivsdfsdfek",
+                      },
+                      {
+                        id: 2,
+                        name: "viasddvek",
+                      },
+                      {
+                        id: 3,
+                        name: "viasdasvek",
+                      },
+                      {
+                        id: 4,
+                        name: "viasdvek",
+                      },
+                    ]}
+                  />
+                </div>
+                <div className="w-16  text-xs">
+                  <DropDownAka
+                    list={[
+                      {
+                        id: 0,
+                        name: "vivek",
+                      },
+                      {
+                        id: 1,
+                        name: "vivek",
+                      },
+                      {
+                        id: 2,
+                        name: "vivek",
+                      },
+                      {
+                        id: 3,
+                        name: "vivek",
+                      },
+                      {
+                        id: 4,
+                        name: "vivek",
+                      },
+                    ]}
+                  />
+                </div>
               </div>
-              <div className="w-16  text-xs">
-                <DropDownAka
-                  list={[
-                    {
-                      id: 0,
-                      name: "vivek",
-                    },
-                    {
-                      id: 1,
-                      name: "vivek",
-                    },
-                    {
-                      id: 2,
-                      name: "vivek",
-                    },
-                    {
-                      id: 3,
-                      name: "vivek",
-                    },
-                    {
-                      id: 4,
-                      name: "vivek",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
 
-            <div className="  text-md rounded-md bg-gray-700 text-white">
-              <button
-                className="text-xs m-2 font-semibold"
-                onClick={() => navigate("/test")}
-              >
-                All channels
-              </button>
+              <div className="  text-md rounded-md bg-gray-700 text-white">
+                <button
+                  className="text-xs m-2 font-semibold"
+                  onClick={() => navigate("/test")}
+                >
+                  All channels
+                </button>
+              </div>
             </div>
-          </div>
-        </header>
+          </header>
+        )}
 
         <main>
-          <div className="mx-auto    sm:px-6 lg:px-8">
+          <div className="  ">
             {" "}
             <Outlet />
           </div>
