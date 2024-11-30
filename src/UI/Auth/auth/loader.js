@@ -3,7 +3,7 @@ import { redirect } from 'react-router-dom';
 export function authLoader() {
   if (!localStorage.getItem('AK_AUTH_TOKEN')) {
      
-    return redirect('/auth');
+    return redirect('/auth/login');
   }
   return null;
 }
